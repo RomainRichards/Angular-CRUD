@@ -5,6 +5,7 @@ import { AboutPageComponent } from './Pages/about-page/about-page.component';
 import { ContactPageComponent } from './Pages/contact-page/contact-page.component';
 import { StudentCreateComponent } from './Pages/student-create/student-create.component';
 
+// Routing for each component.
 const routes: Routes = [
   {path:'',component: HomePageComponent, title: 'Home Page' },
   {path:'about-us', component: AboutPageComponent, title: 'About Us' },

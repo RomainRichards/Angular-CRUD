@@ -8,6 +8,7 @@ import { AboutPageComponent } from './Pages/about-page/about-page.component';
 import { ContactPageComponent } from './Pages/contact-page/contact-page.component';
 import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { StudentCreateComponent } from './Pages/student-create/student-create.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { StudentCreateComponent } from './Pages/student-create/student-create.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
