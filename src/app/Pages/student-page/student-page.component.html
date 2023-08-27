@@ -10,7 +10,12 @@
             
             <div class="card-body">
                 
-                <table class="table tabl-striped table-bordered">
+                <div *ngIf="isLoading;else elseTableBlock">
+                    <app-loader />
+                </div>
+
+                <ng-template #elseTableBlock>            
+                    <table class="table tabl-striped table-bordered">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -24,11 +29,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
+                        <tr *ngFor="let item of this.students">
+                            <td>{{item.id}}</td>
+                            <td>{{item.name}}</td>
+                            <td>{{item.course}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.phone}}</td>
+                            <td>{{item.created_at}}</td>
+                            <td>
+                                <a routerLink="/students/{{item.id}}/edit" class="btn btn-success">Edit</a>
+                                <button type="button" class="btn btn-danger">Delete</button>
+                            </td>
                         </tr>
                     </tbody>
-                </table>
+                    </table>
+                </ng-template>
             </div>
 
         </div>
