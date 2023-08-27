@@ -17,11 +17,13 @@ export class StudentCreateComponent {
   phone!:string
 
   isLoading: boolean = false;
+  loadingTitle: string = 'Loading';
   errors: any = [];
 
   saveStudent() {
 
     this.isLoading = true;
+    this.loadingTitle='Saving'
 
     var inputData = {
       name: this.name,

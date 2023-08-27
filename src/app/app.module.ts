@@ -11,6 +11,7 @@ import { ContactPageComponent } from './Pages/contact-page/contact-page.componen
 import { NavbarComponent } from './Pages/Partials/navbar/navbar.component';
 import { StudentCreateComponent } from './Pages/student-create/student-create.component';
 import { LoaderComponent } from './Pages/Partials/loader/loader.component';
+import { StudentPageComponent } from './Pages/student-page/student-page.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoaderComponent } from './Pages/Partials/loader/loader.component';
     ContactPageComponent,
     NavbarComponent,
     StudentCreateComponent,
-    LoaderComponent
+    LoaderComponent,
+    StudentPageComponent
   ],
   imports: [
     BrowserModule,

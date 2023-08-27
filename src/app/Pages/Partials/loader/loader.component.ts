@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
 })
 export class LoaderComponent {
 
-  title:string = 'Loading'; // Add title to loading bootstrap
+  title: string = 'Loading'; // Add title to loading bootstrap
 }
