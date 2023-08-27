@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StudentService } from 'src/app/Services/student.service';
 
 @Component({
   selector: 'app-student-create',
@@ -6,12 +7,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./student-create.component.css']
 })
 export class StudentCreateComponent {
+
+  constructor(private studentService: StudentService ) {}
+
+
   name!:string
   course!:string
   email!:string
   phone!:string
 
+  isLoading: boolean = false;
+  errors: any = [];
+
   saveStudent() {
+
+    this.isLoading = true;
+
     var inputData = {
       name: this.name,
       course: this.course,
@@ -19,6 +30,25 @@ export class StudentCreateComponent {
       phone: this.phone
     }
 
+    this.studentService.saveStudent(inputData).subscribe({
+      next: (res: any) => {
+        console.log(res, 'response');
+
+        alert(res.messsage);
+        this.name= '';
+        this.course= '';
+        this.email= '';
+        this.phone= '';
+
+        this.isLoading = false;
+
+      },
+      error: (err: any) => {
+        this.errors = err.error.errors;
+        this.isLoading = false;
+        console.log(err.error.errors, 'errors');
+      }
+    });
 
   }
 }
